@@ -6,10 +6,13 @@ import reportWebVitals from './reportWebVitals';
 
 //IMPORTS HERE
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import {reducer} from './reducers/quoteReducer'
 
-const store = createStore(reducer);
+import thunk from 'redux-thunk'
+import logger from 'redux-logger'
+
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <React.StrictMode>
