@@ -23,8 +23,10 @@ const Quote = (props) => {
 
 
     return (
+        
         <div>
-            <h2> Breaking Bad Says{quote}</h2>
+            <h3> {quote}</h3>
+            
             <button onClick={handleClick}> Change the Quote </button>
         </div>
     )

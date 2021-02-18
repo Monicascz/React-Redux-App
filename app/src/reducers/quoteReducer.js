@@ -17,6 +17,7 @@ export const reducer = (state = initialState, action) => {
         return({
             ...state,
             quote: action.payload,
+            author: action.payload,
             isFetching: false,
         })
         case(FETCH_QUOTE_FAILURE):

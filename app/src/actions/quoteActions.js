@@ -10,12 +10,12 @@ export const getQuote = () => {
     axios
         .get('https://breaking-bad-quotes.herokuapp.com/v1/quotes')
         .then(resp=>{
-            console.log('api call', resp.data.quote)
-            dispatch(fetchQuoteSuccess(resp.data.quote))
+            // console.log('api call', resp.data[0])
+             dispatch(fetchQuoteSuccess(resp.data[0].quote))
         })
         .catch(err =>{
-            // console.log('error', err)
-            // dispatch(fetchQuoteFailure(err.Response.code))
+            console.log('error', err)
+            dispatch(fetchQuoteFailure(err))
         })
     // axios
     //     .get('https://api.kanye.rest')
